@@ -1,0 +1,64 @@
+// Color Palette
+// examples based on the official Sass styleguide
+
+// descriptive colors
+// =============
+
+$black-100:                 #000;
+$grey:                      #333333;
+$lightgrey:                 #666;
+$gray-87:                   #1A1A1A;
+$gray-73:                   #222222;
+$gray-65:                   #444444;
+$gray-50:                   #808080;
+$gray-35:                   #a5a5a5;
+$gray-15:                   #d9d9d9;
+$gray-02:                   #f7f9f9;
+$white:                     #ffffff;
+$pink:                      #A9145A;
+$lightpink:                 #c69;
+$blue:                      #2980B6;
+$lightblue:                 #299ED5;
+
+// main color palette
+// =============
+$color-primary:             $blue;
+$color-secondary:           $pink;
+$color-accent:              $gray-15;
+$color-shadow:              rgba($black-100, .125);
+$color-note:                #666;
+
+// Common colors
+$color-background:          $white;
+$color-background-shade:    $gray-02;
+$color-background-invert:   $gray-35;
+$color-text:                $grey;
+$color-text-weak:           $lightgrey;
+$color-text-strong:         $black-100;
+$color-text-heading:        $pink;
+$color-text-invert:         rgba($color-background, .75);
+$color-text-strong-invert:  $color-background;
+
+// Links
+$color-link:                        $white;
+$color-link-hover:                  $gray-02;
+$color-link-primary:                $blue;
+$color-link-primary-hover:          $lightblue;
+$color-link-secondary:              $pink;
+$color-link-secondary-hover:        $lightpink;
+
+// Code
+$color-code:                #333;
+$color-code-background:     #f3f3f3;
+$color-pre:                 #d4d4d4;
+$color-pre-background:      #333;
+
+// Selections
+$color-selection:           #299ED5;
+
+// Messages
+$color-message:             #f4ecbb;
+$color-success:             #2cde2c;
+$color-warning:             #cf8600;
+$color-danger:              #d00;
+$color-info:                #299ED5;

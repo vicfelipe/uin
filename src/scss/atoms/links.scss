@@ -1,0 +1,27 @@
+.link {
+    background: transparent;
+    color: $color-link;
+    text-decoration: none;
+    transition: color .2s;
+    @include hover {
+        color: $color-link-hover;
+    }
+    &-primary {
+        @extend .link;
+        color: $color-link-primary;
+        &:enabled {
+            @include hover {
+                color: $color-link-primary-hover;
+            }
+        }
+    }
+    &-secondary {
+        @extend .link;
+        color: $color-link-secondary;
+        &:enabled {
+            @include hover {
+                color: $color-link-secondary-hover;
+            }
+        }
+    }
+}

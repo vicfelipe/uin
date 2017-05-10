@@ -1,0 +1,25 @@
+.input{
+    border: 1px $gray-15 solid;
+    padding: em(6);
+    color: $color-text;
+    @include border-radius($input-radius);
+    @include placeholder($color-text-weak);
+    @include hover(){
+        border: 1px $color-primary solid;
+    }
+    &-error{
+        @extend input;
+        border: 1px $color-danger solid;
+        color: $color-danger;
+    }
+    &-warning{
+        @extend input;
+        border: 1px $color-warning solid;
+        color: $color-warning;
+    }
+    &-success{
+        @extend input;
+        border: 1px $color-success solid;
+        color: $color-success;
+    }
+}

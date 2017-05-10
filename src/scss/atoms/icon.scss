@@ -1,0 +1,78 @@
+$icon-size: 3rem;
+
+// Map icon names to font unicode characters
+// $icons: (
+//     icon-calendar: "\e902",
+//     icon-responsive: "\e903",
+//     icon-wallet: "\e904",
+//     icon-newspapper: "\e905",
+//     icon-discover: "\e906",
+//     icon-assinantes: "\e908",
+//     icon-editoras: "\e90a",
+//     icon-autores: "\e90a",
+//     icon-shelf: "\e90c",
+//     icon-plus: "\e90d",
+//     icon-nerd: "\e90e",
+//     icon-put-shelf: "\e90f",
+//     icon-fast-back: "\e910",
+//     icon-back: "\e911",
+//     icon-play: "\e912",
+//     icon-foward: "\e913",
+//     icon-fast-foward: "\e914",
+//     icon-close: "\e915"
+// );
+@include font-face();
+.icon-calendar{
+    @include icon($icon-calendar);
+}
+.icon-responsive{
+    @include icon($icon-responsive);
+}
+.icon-wallet{
+    @include icon($icon-wallet);
+}
+.icon-newspapper{
+    @include icon($icon-newspapper);
+}
+.icon-discover{
+    @include icon($icon-discover);
+}
+.icon-assinantes{
+    @include icon($icon-assinantes);
+}
+.icon-editoras{
+    @include icon($icon-editoras);
+}
+.icon-autores{
+    @include icon($icon-autores);
+}
+.icon-shelf{
+    @include icon($icon-shelf);
+}
+.icon-plus{
+    @include icon($icon-plus);
+}
+.icon-nerd{
+    @include icon($icon-nerd);
+}
+.icon-put-shelf{
+    @include icon($icon-put-shelf);
+}
+.icon-fast-back{
+    @include icon($icon-fast-back);
+}
+.icon-back{
+    @include icon($icon-back);
+}
+.icon-play{
+    @include icon($icon-play);
+}
+.icon-foward{
+    @include icon($icon-foward);
+}
+.icon-fast-foward{
+    @include icon($icon-fast-foward);
+}
+.icon-close{
+    @include icon($icon-close);
+}

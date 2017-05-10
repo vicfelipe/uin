@@ -1,0 +1,96 @@
+@viewport { width: device-width; }
+
+html {
+  background-color: $color-background;
+  box-sizing: border-box;
+}
+
+* {
+  &:before,
+  &:after { box-sizing: inherit; }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $color-text;
+  font-family: $font-family-default;
+  min-height: 100%;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-display;
+  font-weight: 500;
+}
+h1,
+.h1{
+  font-size: em(48, $base-font-size) !important;
+}
+h2,
+.h2{
+  font-size: em(40, $base-font-size) !important;
+}
+h3,
+.h3{
+  font-size: em(34, $base-font-size) !important;
+}
+h4,
+.h4{
+  font-size: em(30, $base-font-size) !important;
+}
+h5,
+.h5{
+  font-size: em(26, $base-font-size) !important;
+}
+h6,
+.h6{
+  font-size: em(20, $base-font-size) !important;
+}
+p{
+  font-size: em($base-font-size);
+  line-height: em($base-line-height);
+}
+ul{
+  list-style: square;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid $lightblue;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: $lightblue;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+blockquote cite {
+  display: block;
+}
+blockquote cite a{
+  color: $lightgrey;
+}
+hr{
+    border-top: 1px solid $lightblue;
+}
+figure img{
+  border-radius: em(5);
+}
