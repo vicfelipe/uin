@@ -21,66 +21,81 @@
 // input[type="search"]
 // input[type="tel"]
 // input[type="color"]
-
 input[type="search"] {
-  @include box-sizing(border-box);
+    @include box-sizing(border-box);
 }
+
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9; // IE8-9
-  line-height: normal;
+    margin: 4px 0 0;
+    margin-top: 1px \9; // IE8-9
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.25;
+    position: relative;
 }
+.radio + .radio{
+    margin-left: 0.5em;
+}
+
 input[type="file"] {
-  display: block;
+    display: block;
 }
+
 input[type="range"] {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
+
 select[multiple],
 select[size] {
-  height: auto;
+    height: auto;
 }
+
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  @include tab-focus;
+    @include tab-focus;
 }
 
-.input{
+.field:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.input {
+    display: block;
     border: 1px $gray-15 solid;
     padding: em(6);
     color: $color-text;
     @include border-radius($input-radius);
     @include placeholder($color-text-weak);
-    @include hover(){
+    @include hover() {
         border: 1px $color-primary solid;
     }
-    &-error{
+    &-error {
         @extend input;
         border: 1px $color-danger solid;
         background-color: lighten($color-danger, 52%);
         color: $color-danger;
-        @include hover(){
+        @include hover() {
             border: 1px $color-danger solid;
         }
     }
-    &-warning{
+    &-warning {
         @extend input;
         border: 1px $color-warning solid;
         background-color: lighten($color-warning, 45%);
         color: $color-warning;
-        @include hover(){
+        @include hover() {
             border: 1px $color-warning solid;
         }
     }
-    &-success{
+    &-success {
         @extend input;
         border: 1px $color-success solid;
         background-color: lighten($color-success, 55%);
         color: $color-success;
-        @include hover(){
+        @include hover() {
             border: 1px $color-success solid;
         }
     }
@@ -91,15 +106,8 @@ input[type="checkbox"]:focus {
         border: 1px $input-bg-disabled solid;
         opacity: 1;
     }
-
     &[disabled],
     fieldset[disabled] & {
         cursor: disabled;
     }
 }
-
-
-
-
-
-

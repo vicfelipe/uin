@@ -29,8 +29,8 @@
     }
     &-outline-primary {
         @extend .btn;
-            border: $border-primary;
-            color: $color-primary;
+        border: $border-primary;
+        color: $color-primary;
         &:enabled:hover {
             background-color: $color-primary;
             color: #fff;
@@ -49,8 +49,8 @@
     }
     &-outline-secondary {
         @extend .btn;
-            border: $border-secondary;
-            color: $color-secondary;
+        border: $border-secondary;
+        color: $color-secondary;
         &:enabled:hover {
             background-color: $color-secondary;
             color: #fff;
