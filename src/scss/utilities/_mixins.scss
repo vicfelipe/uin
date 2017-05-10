@@ -1,39 +1,39 @@
+// ===================================
 // Mixins
-
+// ===================================
+// ===================================
 // Reset List
-//
+// ===================================
 // Resets default list styling.
-//
 // @usage - `@include reset-list`
-//
-// Styleguide 10.1
-
+// ===================================
 @mixin reset-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+// ===================================
 // Hovers
-//
+// ===================================
 // Create pseduo-classes for `:hover`, `:active`, and `:focus`.
-//
 // @usage - `@include hover`
-//
-// Styleguide 10.3
-
+// ===================================
 @mixin hover {
   &:hover,
   &:active,
-  &:focus { @content; }
+  &:focus {
+    @content;
+  }
 }
 
+// ===================================
 // Feature Detection
-//
+// ===================================
 // $feature - Feature-specific class, i.e. `cssgradients`.
 // @usage - `@include supported($feature)`
 // @usage - `@include not-supported($feature)`
-
+// ===================================
 @mixin supported($feature) {
   .#{$feature} & {
     @content;
@@ -47,67 +47,73 @@
   }
 }
 
+// ===================================
 // Media Queries
-//
+// ===================================
 // Allows you to use inline media queries. Includes options for `$fix-mqs`.
-//
 // $breakpoint - Desired breakpoint. Can be variable or unit.
 // $query - Defaults to `min-width`.
 // $type - Defaults to `screen`.
-
+// ===================================
 @mixin mq($breakpoint, $query: 'min-width', $type: 'screen') {
   @if $fix-mqs {
-    @if $fix-mqs >= $breakpoint { @content; }
-  } @else {
-    @media #{$type} and (#{$query}: #{$breakpoint}) { @content; }
+    @if $fix-mqs>=$breakpoint {
+      @content;
+    }
+  }
+  @else {
+    @media #{$type} and (#{$query}: #{$breakpoint}) {
+      @content;
+    }
   }
 }
 
+// ===================================
 // Clearfix
-//
+// ===================================
 // Nicolas Gallagher's micro clearfix hack
-//
 // @source - http://nicolasgallagher.com/micro-clearfix-hack/
-
+// ===================================
 @mixin clearfix {
   *zoom: 1;
-
   &:before,
   &:after {
     content: '';
     display: table;
   }
-
-  &:after { clear: both; }
+  &:after {
+    clear: both;
+  }
 }
 
+// ===================================
 // Hide Text
-//
+// ===================================
 // @usage - `@include hide-text`
-
+// ===================================
 @mixin hide-text {
   overflow: hidden;
   text-indent: 101%;
   white-space: nowrap;
 }
 
+// ===================================
 // Hidden
-//
+// ===================================
 // Hide from both screenreaders and browsers
-//
 // @usage - `@include hidden`
-
+// ===================================
 @mixin hidden {
   display: none !important;
   visibility: hidden;
 }
 
+// ===================================
 // Visually Hidden
-//
+// ===================================
 // Hide only visually, but have it available for screenreaders
-//
 // @usage - `@include visuallyhidden`
-
+// ===================================
 @mixin visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -117,10 +123,6 @@
   padding: 0;
   position: absolute;
   width: 1px;
-
-  // Extends the .visuallyhidden class to allow the element to be focusable
-  // when navigated to via the keyboard: h5bp.com/p
-
   &.focusable {
     &:active,
     &:focus {
@@ -134,64 +136,49 @@
   }
 }
 
+// ===================================
 // Invisible
-//
+// ===================================
 // Hide visually and from screenreaders, but maintain layout
-//
-// @usage - `@include invisible`
+// usage - `@include invisible`
+// ===================================
+@mixin invisible {
+  visibility: hidden;
+}
 
-@mixin invisible { visibility: hidden; }
-
-
+// ===================================
+// Transition
+// ===================================
+// Add transition to element
+// usage - `@include invisible(transition parameter)`
+// parameter - Usual CSS transition on CSS3
+// ===================================
 @mixin transition($transition) {
   -webkit-transition: $transition;
   -o-transition: $transition;
   transition: $transition;
 }
 
-// // For adding font icons to elements using CSS pseudo-elements
-// // http://jaydenseric.com/blog/fun-with-sass-and-font-icons
-// @mixin icon($position: before, $icon: false, $styles: true) {
-//     @if $position == both {
-//         $position: 'before, &:after';
-//     }
-//     // Either a :before or :after pseudo-element, or both, defaulting to :before
-//     &:#{$position} {
-//         @if $icon {
-//             // A particular icon has been specified
-//             content: "#{map-get($icons, $icon)}";
-//         }
-//         @if $styles {
-//             // Supportive icon styles required
-//             speak: none;
-//             font-style: normal;
-//             font-weight: normal;
-//             font-family: 'Icons';
-//         }
-//         // Include any extra rules supplied for the pseudo-element
-//         @content;
-//     }
-// }
-
-/////// @font-face mixin
-// *-------------------------------------------------------------------------------
-
-@mixin font-face($font_family: $webfont_font_family, $font-file: $webfont-file, $font_weight: $webfont_weight, $font_style: $webfont_style, $webfont_directory: $webfont_directory ) {
+// ===================================
+// @font-face
+// ===================================
+// Add external font URL
+// usage - `@include font-face('font family', 'font file', '$font weight', 'font style', 'font directory')`
+// ===================================
+@mixin font-face($font_family: $webfont_font_family, $font-file: $webfont-file, $font_weight: $webfont_weight, $font_style: $webfont_style, $webfont_directory: $webfont_directory) {
   @font-face {
     font-family: '#{$font_family}';
     font-style: $font_style;
     font-weight: $font_weight;
     src: url('#{$webfont_directory}#{$font-file}.eot');
     src: url('#{$webfont_directory}#{$font-file}.eot?#iefix') format('embedded-opentype'),
-         url('#{$webfont_directory}#{$font-file}.woff') format('woff'),
-         url('#{$webfont_directory}#{$font-file}.ttf') format('truetype'),
-         url('#{$webfont_directory}#{$font-file}.svg##{$font-file}') format('svg');
+    url('#{$webfont_directory}#{$font-file}.woff') format('woff'),
+    url('#{$webfont_directory}#{$font-file}.ttf') format('truetype'),
+    url('#{$webfont_directory}#{$font-file}.svg##{$font-file}') format('svg');
   }
 }
-
 $icon_font_alpha: 'icons' !default;
 $default_ico_margin: true !default;
-
 %ico-font-base {
   font-family: $icon_font_alpha;
   speak: none;
@@ -202,31 +189,77 @@ $default_ico_margin: true !default;
   -moz-osx-font-smoothing: grayscale;
 }
 
+// ===================================
+// @icon
+// ===================================
+// Add icon pattern to class.
+// usage - `@include icon('icon content number', 'margin? true or false')`
+// ===================================
 @mixin icon($pua, $margin: $default_ico_margin) {
   &:before {
     @extend %ico-font-base;
     content: $pua;
-    @if $margin == true {
+    @if $margin==true {
       margin-right: 0.25em;
     }
   }
 }
 
+// ===================================
+// @border-radius
+// ===================================
+// Add border radius to element
+// usage - `@include border-radius(size)`
+// ===================================
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   border-radius: $radius;
-  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
 }
+
+// ===================================
+// @placeholder
+// ===================================
+// Change placeholder input color.
+// usage - `@include placeholder(color)`
+// ===================================
 @mixin placeholder($color) {
-  ::-webkit-input-placeholder { /* Chrome */
-  }
-  :-ms-input-placeholder { /* IE 10+ */
+   ::-webkit-input-placeholder {
     color: $color;
   }
-  ::-moz-placeholder { /* Firefox 19+ */
+   :-ms-input-placeholder {
     color: $color;
   }
-  :-moz-placeholder { /* Firefox 4 - 18 */
+   ::-moz-placeholder {
     color: $color;
   }
+   :-moz-placeholder {
+    color: $color;
+  }
+}
+
+// ===================================
+// @box-sizing
+// ===================================
+// Add box model to element
+// usage - `@include box-sizing(box model)`
+// ===================================
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+// ===================================
+// @tabfocus
+// ===================================
+// Add style to tab focus
+// usage - `@include tab-focus()`
+// ===================================
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted; // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }

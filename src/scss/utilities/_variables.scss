@@ -10,6 +10,7 @@ $webfont_directory: "../fonts/" !default;
 // ---------------------
 // Icons
 // ---------------------
+$icon-size: 3rem;
 $icon-calendar: '\e902';
 $icon-responsive: '\e903';
 $icon-calendar: "\e902";
@@ -46,14 +47,16 @@ $radius: 2px;
 // ---------------------
 // Forms
 // ---------------------
-$input-radius: 3px; 
+$input-radius: 3px;
+$input-padding: em(6);
+$input-bg-disabled: $gray-15;
 
 
 // ---------------------
 // Tables
 // ---------------------
 $table-header-font-weight: 400;
-$table-header-font-color: $gray-50;
+$table-header-font-color: $gray-35;
 $table-cell-padding: 1.6rem;
 $table-condensed-cell-padding: $table-cell-padding/2;
 $table-bg: $white;

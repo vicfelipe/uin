@@ -1,0 +1,105 @@
+// Normalização dos "inputs"
+//
+// Todos os inputs estão normalizados para seguir o layout proposto
+// É necessário que utilize a classe ".input" para estilizar a entrada
+// ===================================
+// Todas as entradas comuns
+// ===================================
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+input[type="search"] {
+  @include box-sizing(border-box);
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
+}
+input[type="file"] {
+  display: block;
+}
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+select[multiple],
+select[size] {
+  height: auto;
+}
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  @include tab-focus;
+}
+
+.input{
+    border: 1px $gray-15 solid;
+    padding: em(6);
+    color: $color-text;
+    @include border-radius($input-radius);
+    @include placeholder($color-text-weak);
+    @include hover(){
+        border: 1px $color-primary solid;
+    }
+    &-error{
+        @extend input;
+        border: 1px $color-danger solid;
+        background-color: lighten($color-danger, 52%);
+        color: $color-danger;
+        @include hover(){
+            border: 1px $color-danger solid;
+        }
+    }
+    &-warning{
+        @extend input;
+        border: 1px $color-warning solid;
+        background-color: lighten($color-warning, 45%);
+        color: $color-warning;
+        @include hover(){
+            border: 1px $color-warning solid;
+        }
+    }
+    &-success{
+        @extend input;
+        border: 1px $color-success solid;
+        background-color: lighten($color-success, 55%);
+        color: $color-success;
+        @include hover(){
+            border: 1px $color-success solid;
+        }
+    }
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: $input-bg-disabled;
+        border: 1px $input-bg-disabled solid;
+        opacity: 1;
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: disabled;
+    }
+}
+
+
+
+
+
+

@@ -1,26 +1,3 @@
-$icon-size: 3rem;
-
-// Map icon names to font unicode characters
-// $icons: (
-//     icon-calendar: "\e902",
-//     icon-responsive: "\e903",
-//     icon-wallet: "\e904",
-//     icon-newspapper: "\e905",
-//     icon-discover: "\e906",
-//     icon-assinantes: "\e908",
-//     icon-editoras: "\e90a",
-//     icon-autores: "\e90a",
-//     icon-shelf: "\e90c",
-//     icon-plus: "\e90d",
-//     icon-nerd: "\e90e",
-//     icon-put-shelf: "\e90f",
-//     icon-fast-back: "\e910",
-//     icon-back: "\e911",
-//     icon-play: "\e912",
-//     icon-foward: "\e913",
-//     icon-fast-foward: "\e914",
-//     icon-close: "\e915"
-// );
 @include font-face();
 .icon-calendar{
     @include icon($icon-calendar);
