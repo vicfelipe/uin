@@ -38,6 +38,9 @@ html {
 html,
 button,
 input,
+.input-error,
+.input-warning,
+.input-success,
 select,
 textarea {
   font-family: sans-serif;
@@ -167,6 +170,9 @@ legend {
 
 button,
 input,
+.input-error,
+.input-warning,
+.input-success,
 select,
 textarea {
   font-family: inherit;
@@ -175,7 +181,7 @@ textarea {
   vertical-align: baseline;
 }
 
-button, input {
+button, input, .input-error, .input-warning, .input-success {
   line-height: normal;
 }
 
@@ -186,18 +192,30 @@ select {
 
 button,
 html input[type="button"],
+html [type="button"].input-error,
+html [type="button"].input-warning,
+html [type="button"].input-success,
 input[type="reset"],
-input[type="submit"] {
+[type="reset"].input-error,
+[type="reset"].input-warning,
+[type="reset"].input-success,
+input[type="submit"],
+[type="submit"].input-error,
+[type="submit"].input-warning,
+[type="submit"].input-success {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
 button[disabled],
-input[disabled] {
+input[disabled],
+[disabled].input-error,
+[disabled].input-warning,
+[disabled].input-success {
   cursor: default;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner, .input-error::-moz-focus-inner, .input-warning::-moz-focus-inner, .input-success::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -212,16 +230,16 @@ table {
   border-spacing: 0;
 }
 
-input[type="search"] {
+input[type="search"], [type="search"].input-error, [type="search"].input-warning, [type="search"].input-success {
   -webkit-appearance: textfield;
   box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button, [type="search"].input-error::-webkit-search-cancel-button, [type="search"].input-warning::-webkit-search-cancel-button, [type="search"].input-success::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration, [type="search"].input-error::-webkit-search-decoration, [type="search"].input-warning::-webkit-search-decoration, [type="search"].input-success::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"], [type="checkbox"].input-error, [type="checkbox"].input-warning, [type="checkbox"].input-success, input[type="radio"], [type="radio"].input-error, [type="radio"].input-warning, [type="radio"].input-success {
   box-sizing: border-box;
   padding: 0;
 }
@@ -517,6 +535,53 @@ figure img {
 .icon-close:before {
   content: "";
   margin-right: 0.25em;
+}
+
+.input {
+  border: 1px #d9d9d9 solid;
+  padding: 0.33333em;
+  color: #333333;
+  border-radius: 3px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+
+.input ::-webkit-input-placeholder {
+  /* Chrome */
+}
+
+.input :-ms-input-placeholder {
+  /* IE 10+ */
+  color: #666;
+}
+
+.input ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #666;
+}
+
+.input :-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: #666;
+}
+
+.input:hover, .input:active, .input:focus {
+  border: 1px #2980B6 solid;
+}
+
+.input-error {
+  border: 1px #d00 solid;
+  color: #d00;
+}
+
+.input-warning {
+  border: 1px #cf8600 solid;
+  color: #cf8600;
+}
+
+.input-success {
+  border: 1px #2cde2c solid;
+  color: #2cde2c;
 }
 
 .link, .link-primary, .link-secondary {

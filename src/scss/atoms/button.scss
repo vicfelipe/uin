@@ -1,3 +1,16 @@
+// Buttons
+//
+// Utilizar ".btn" para padronizar botão
+//
+// Os estilos dos botões podem ser
+// "btn btn-outline-primary" - Branco com cores da borda primária
+// "btn btn-outline-primary" - Branco com cores da borda secundária
+// "btn btn-primary" - Preenchido na cor primária
+// "btn btn-secondary" - Preenchido na cor secundária
+// "btn btn-success" - Preenchido na cor de "success"
+// "btn btn-warning" - Preenchido na cor de "warning"
+// "btn btn-danger" - Preenchido na cor "danger"
+
 .btn {
     padding: .35em 1em;
     .shadow-z-1 {
@@ -52,6 +65,39 @@
         &:enabled:hover {
             background-color: $lightpink;
             border-color: $lightpink;
+        }
+    }
+    &-success {
+        @extend .btn;
+        border: $border-success;
+        background-color: $color-success;
+        border-color: $color-success;
+        color: #fff;
+        &:enabled:hover {
+            background-color: lighten($color-success, 20%);
+            border-color: lighten($color-success, 20%);
+        }
+    }
+    &-warning {
+        @extend .btn;
+        border: $border-warning;
+        background-color: $color-warning;
+        border-color: $color-warning;
+        color: #fff;
+        &:enabled:hover {
+            background-color: lighten($color-warning, 20%);
+            border-color: lighten($color-warning, 20%);
+        }
+    }
+    &-danger {
+        @extend .btn;
+        border: $border-danger;
+        background-color: $color-danger;
+        border-color: $color-danger;
+        color: #fff;
+        &:enabled:hover {
+            background-color: lighten($color-danger, 20%);
+            border-color: lighten($color-danger, 20%);
         }
     }
     &:disabled {
