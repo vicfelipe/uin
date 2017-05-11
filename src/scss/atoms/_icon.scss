@@ -1,55 +1,92 @@
 @include font-face();
-.icon-calendar{
+.icon-calendar {
     @include icon($icon-calendar);
 }
-.icon-responsive{
+
+.icon-responsive {
     @include icon($icon-responsive);
 }
-.icon-wallet{
+
+.icon-wallet {
     @include icon($icon-wallet);
 }
-.icon-newspapper{
+
+.icon-newspapper {
     @include icon($icon-newspapper);
 }
-.icon-discover{
+
+.icon-discover {
     @include icon($icon-discover);
 }
-.icon-assinantes{
+
+.icon-assinantes {
     @include icon($icon-assinantes);
 }
-.icon-editoras{
+
+.icon-editoras {
     @include icon($icon-editoras);
 }
-.icon-autores{
+
+.icon-autores {
     @include icon($icon-autores);
 }
-.icon-shelf{
+
+.icon-shelf {
     @include icon($icon-shelf);
 }
-.icon-plus{
+
+.icon-plus {
     @include icon($icon-plus);
 }
-.icon-nerd{
+
+.icon-nerd {
     @include icon($icon-nerd);
 }
-.icon-put-shelf{
+
+.icon-put-shelf {
     @include icon($icon-put-shelf);
 }
-.icon-fast-back{
+
+.icon-fast-back {
     @include icon($icon-fast-back);
 }
-.icon-back{
+
+.icon-back {
     @include icon($icon-back);
 }
-.icon-play{
+
+.icon-play {
     @include icon($icon-play);
 }
-.icon-foward{
+
+.icon-foward {
     @include icon($icon-foward);
 }
-.icon-fast-foward{
+
+.icon-fast-foward {
     @include icon($icon-fast-foward);
 }
-.icon-close{
+
+.icon-close {
     @include icon($icon-close);
+}
+
+.icon-menu-hamburger {
+    @include icon($icon-menu-hamburger);
+}
+
+.icon-search {
+    @include icon($icon-search);
+}
+
+.icon-font-less {
+    @include icon($icon-font-less);
+}
+
+.icon-font-more {
+    @include icon($icon-font-more);
+}
+
+.icon-star {
+    @include icon($icon-star);
 }

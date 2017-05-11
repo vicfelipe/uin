@@ -28,13 +28,9 @@ $old-ie:                      false !default;
 //
 // $breakpoints - {map}
 
-$breakpoints: (
-  xsmall:                     null,
-  small:                      480,
-  medium:                     768,
-  large:                      1024,
-  xlarge:                     1280,
-);
+$tablet: 769px !default;
+$desktop: 980px !default;
+$widescreen: 1180px !default;
 
 // $zindex
 //
