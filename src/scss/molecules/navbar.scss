@@ -1,0 +1,102 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: .5rem 1rem;
+    background-color: transparent;
+    svg {
+        height: 1.2rem;
+        max-height: 1.2rem;
+        max-width: 1.2rem;
+        width: 1.2rem;
+    } 
+    .nav-left,
+    .nav-right {
+        align-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .nav-left{
+        >.logo img {
+            padding-left: .5rem;
+            vertical-align: middle;
+        }
+    }
+    .nav-right{
+        margin-left: auto;
+        a.entrar{
+            &:hover{
+                color: $white;
+                background-color: $color-primary;
+            }
+        }
+    }
+}
+
+.navbar-app {
+    @extend .navbar;
+    display: flex;
+	flex-direction: row;
+    background-color: $grey;
+    padding: .5rem 1rem;
+    object {
+        height: 4rem;
+        max-height: 4rem;
+        max-width: 4rem;
+        width: 4rem;
+    } 
+    .nav-left,
+    .nav-middle,
+    .nav-right {
+        flex-grow: 1;
+    }
+    .nav-left{
+        >.logo img {
+            padding: .5rem;
+            vertical-align: middle;
+        }
+        >.categorias{
+            margin-left: 1rem;
+            >.link{
+                >span{
+                    display: none;
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                    margin-top: -.6rem;
+                    border-left: .3rem solid transparent;
+                    border-right: .3rem solid transparent;
+                    border-top: .3rem solid $white;
+                }
+            }
+        }
+    }
+    .nav-middle{
+        form{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .nav-right{
+        justify-content: flex-end;
+        a.entrar{
+            &:hover{
+                color: $white;
+                background-color: $color-primary;
+            }
+        }
+        .menu{
+            border: 1px $gray-73 solid;
+            color: $white;
+            background-color: $gray-73;
+            border-radius: .5rem;
+            width: .5rem;
+            font-size: 1rem;
+            i{
+                margin-left: -.54rem;
+            }
+        }
+    }
+
+}

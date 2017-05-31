@@ -3201,6 +3201,122 @@ tbody + tbody {
   margin: 0 5px;
 }
 
+.navbar, .navbar-app {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  position: relative;
+  padding: .5rem 1rem;
+  background-color: transparent;
+}
+
+.navbar svg, .navbar-app svg {
+  height: 1.2rem;
+  max-height: 1.2rem;
+  max-width: 1.2rem;
+  width: 1.2rem;
+}
+
+.navbar .nav-left, .navbar-app .nav-left,
+.navbar .nav-right, .navbar-app .nav-right {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .nav-left > .logo img, .navbar-app .nav-left > .logo img {
+  padding-left: .5rem;
+  vertical-align: middle;
+}
+
+.navbar .nav-right, .navbar-app .nav-right {
+  margin-left: auto;
+}
+
+.navbar .nav-right a.entrar:hover, .navbar-app .nav-right a.entrar:hover {
+  color: #ffffff;
+  background-color: #2980B6;
+}
+
+.navbar-app {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  background-color: #333333;
+  padding: .5rem 1rem;
+}
+
+.navbar-app object {
+  height: 4rem;
+  max-height: 4rem;
+  max-width: 4rem;
+  width: 4rem;
+}
+
+.navbar-app .nav-left,
+.navbar-app .nav-middle,
+.navbar-app .nav-right {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+
+.navbar-app .nav-left > .logo img {
+  padding: .5rem;
+  vertical-align: middle;
+}
+
+.navbar-app .nav-left > .categorias {
+  margin-left: 1rem;
+}
+
+.navbar-app .nav-left > .categorias > .link > span, .navbar-app .nav-left > .categorias > .link-primary > span, .navbar-app .nav-left > .categorias > .link-secondary > span {
+  display: none;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin-top: -.6rem;
+  border-left: .3rem solid transparent;
+  border-right: .3rem solid transparent;
+  border-top: 0.3rem solid #ffffff;
+}
+
+.navbar-app .nav-middle form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.navbar-app .nav-right {
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+
+.navbar-app .nav-right a.entrar:hover {
+  color: #ffffff;
+  background-color: #2980B6;
+}
+
+.navbar-app .nav-right .menu {
+  border: 1px #222222 solid;
+  color: #ffffff;
+  background-color: #222222;
+  border-radius: .5rem;
+  width: .5rem;
+  font-size: 1rem;
+}
+
+.navbar-app .nav-right .menu i {
+  margin-left: -.54rem;
+}
+
 .planos {
   display: table;
   width: 100%;

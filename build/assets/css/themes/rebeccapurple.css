@@ -272,7 +272,7 @@ input[type="checkbox"], [type="checkbox"].input-error, [type="checkbox"].input-w
   font-size: 14px;
 }
 
-.icon-calendar:before, .icon-responsive:before, .icon-wallet:before, .icon-newspapper:before, .icon-discover:before, .icon-assinantes:before, .icon-editoras:before, .icon-autores:before, .icon-shelf:before, .icon-plus:before, .icon-nerd:before, .icon-put-shelf:before, .icon-fast-back:before, .icon-back:before, .icon-play:before, .icon-foward:before, .icon-fast-foward:before, .icon-close:before, .icon-search:before, .icon-font-less:before, .icon-font-more:before, .icon-star:before {
+.icon-calendar:before, .icon-responsive:before, .icon-wallet:before, .icon-newspapper:before, .icon-discover:before, .icon-assinantes:before, .icon-editoras:before, .icon-autores:before, .icon-shelf:before, .icon-plus:before, .icon-nerd:before, .icon-put-shelf:before, .icon-fast-back:before, .icon-back:before, .icon-play:before, .icon-foward:before, .icon-fast-foward:before, .icon-close:before, .icon-menu-hamburger:before, .icon-search:before, .icon-font-less:before, .icon-font-more:before, .icon-star:before {
   font-family: "icons";
   speak: none;
   font-style: normal;
@@ -2354,6 +2354,11 @@ figure img {
   margin-right: 0.25em;
 }
 
+.icon-menu-hamburger:before {
+  content: "";
+  margin-right: 0.25em;
+}
+
 .icon-search:before {
   content: "";
   margin-right: 0.25em;
@@ -3194,6 +3199,222 @@ tbody + tbody {
 
 .action > .btn, .action > .btn-outline-primary, .action > .btn-primary, .action > .btn-outline-secondary, .action > .btn-secondary, .action > .btn-success, .action > .btn-warning, .action > .btn-danger {
   margin: 0 5px;
+}
+
+.navbar {
+  display: -ms-flexbox;
+  display: flex;
+  height: 70px;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  position: relative;
+}
+
+.navbar::after {
+  background-size: 200%;
+  bottom: 0;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.navbar .nav-left,
+.navbar .nav-right {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .nav-left > a {
+  color: #ffffff;
+}
+
+.navbar .nav-left > a.logo {
+  background: rgba(0, 0, 0, 0.2);
+  padding: .4rem .75rem;
+}
+
+.navbar .nav-left > a svg {
+  height: 1.6rem;
+  max-height: 1.6rem;
+  max-width: 2rem;
+  width: 1.6rem;
+}
+
+.navbar .nav-left > a path {
+  fill: #ffffff;
+}
+
+.navbar .nav-right {
+  margin-left: auto;
+}
+
+.navbar .nav-right a {
+  color: #ffffff;
+  padding: .5rem 2rem;
+}
+
+.navbar a {
+  display: inline-block;
+  transition: all .2s linear;
+}
+
+.navbar a svg {
+  fill: rgba(0, 0, 0, 0.8);
+  transition: all .2s linear;
+}
+
+.navbar a:hover {
+  background: rgba(41, 128, 182, 0.2);
+  color: #2980B6;
+}
+
+.navbar a:hover svg {
+  fill: #ffffff;
+}
+
+.navbar a.user-avatar {
+  min-width: 200px;
+  padding: 0;
+  padding-left: 2rem;
+  text-align: right;
+}
+
+.navbar a.user-avatar span {
+  padding-right: 1rem;
+}
+
+.navbar img {
+  height: 5rem;
+  padding-left: .5rem;
+  vertical-align: middle;
+}
+
+.navbar svg {
+  height: 1.2rem;
+  max-height: 1.2rem;
+  max-width: 1.2rem;
+  width: 1.2rem;
+}
+
+.navbar .topnav-dropdown-wrapper {
+  position: relative;
+}
+
+.navbar .topnav-dropdown-wrapper:hover .navbar-dropdown {
+  animation: dropdownFade 0.2s cubic-bezier(0.09, 0, 0.99, 0.01) both;
+  display: block;
+}
+
+.navbar .navbar-dropdown a {
+  padding: .8rem .5rem;
+}
+
+.navbar .navbar-dropdown {
+  border-radius: 2px;
+  display: none;
+  left: calc(50% - 350px/2);
+  min-width: 350px;
+  position: absolute;
+  top: 2.4rem;
+  z-index: 999;
+}
+
+.navbar-dropdown {
+  background: #a5a5a5;
+  border: 1px solid #000;
+  padding: .3rem;
+}
+
+.navbar-dropdown.dropdown-user {
+  left: calc(50% - 200px/2);
+  min-width: 200px;
+}
+
+.navbar-dropdown.dropdown-user ul {
+  margin-bottom: 0;
+}
+
+.navbar-dropdown ul {
+  margin: 0;
+  margin-bottom: .5rem;
+  padding: 0;
+}
+
+.navbar-dropdown .plugin:hover .new {
+  color: #ffffff;
+}
+
+.navbar-dropdown .plugin .new {
+  background: #d00;
+  float: right;
+  margin-left: auto;
+  padding: .1rem .25rem;
+}
+
+.navbar-dropdown a {
+  color: #a5a5a5;
+  display: block;
+  padding: .8rem .5rem;
+}
+
+.navbar-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #2980B6;
+}
+
+.navbar-dropdown a.see-more-projects-btn, .navbar-dropdown a.create-organization-btn, .navbar-dropdown a.create-project-btn {
+  color: #ffffff;
+  text-align: center;
+}
+
+.navbar-dropdown a.see-more-projects-btn:hover, .navbar-dropdown a.create-organization-btn:hover, .navbar-dropdown a.create-project-btn:hover {
+  color: #ffffff;
+}
+
+.navbar-dropdown a.see-more-projects-btn {
+  margin-bottom: .3rem;
+}
+
+.navbar-dropdown a.import-project-button {
+  padding: .8rem 1rem;
+}
+
+.navbar-dropdown a.create-project-btn {
+  -ms-flex: 1;
+      flex: 1;
+}
+
+.navbar-dropdown a.blocked-project {
+  color: #a5a5a5;
+}
+
+.navbar-dropdown a.blocked-project svg {
+  margin-left: .5rem;
+  position: relative;
+  top: .25rem;
+}
+
+.navbar-dropdown .import-project-button:hover svg {
+  fill: #2980B6;
+}
+
+.navbar-dropdown .import-project-button svg {
+  fill: #ffffff;
+}
+
+.navbar-dropdown .create-options {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .planos {
